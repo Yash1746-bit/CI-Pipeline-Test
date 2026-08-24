@@ -18,3 +18,8 @@ jobs:
 
       - name: Run Tests
         run: echo "Tests executed successfully"
+
+      - name: SonarQube Scan
+        env:
+         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: ./gradlew sonar
